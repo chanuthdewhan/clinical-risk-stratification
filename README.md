@@ -312,13 +312,14 @@ clinical-risk-stratification/
 ├── notebooks/                             # Jupyter notebooks
 │   └── technical_appendix_modeling.ipynb  # Complete analysis pipeline
 │
-├── graph/                            # Generated visualizations
+├── graph/                              # Generated visualizations
 │   └── [All EDA and analysis plots]
 │
-├── reports/                          # Project deliverables
-│   └── strategic_insight_report.pdf
+├── reports/                            # Project deliverables
+│   ├── Strategic_Insight_Report.pdf    # Business Report
+│   └── VHN_Readmission_Presentation    # Executive Presentation
 │
-└── README.md                         # This file
+└── README.md                           # This file
 ```
 
 ---
