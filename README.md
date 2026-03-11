@@ -35,6 +35,7 @@ Hospital readmissions within 30 days trigger significant Medicare penalties unde
 - ✅ Discovered **54% readmission rate** for Home Health Services—highest operational failure point
 - ✅ Built automated web scraping pipeline to enrich **top 20 ICD-9 diagnosis codes**
 - ✅ Provided **3 actionable recommendations** for immediate operational deployment
+- ✅ Delivered comprehensive 30-minute executive presentation
 
 ---
 
@@ -112,8 +113,7 @@ Python 3.8+
 
 ### Development Environment
 
-- **Platform:** Ubuntu/Linux
-- **IDE:** Jupyter Notebook
+- **IDE:** Jupyter Notebook / VS Code (Jupyter extension)
 - **Version Control:** Git
 
 ---
@@ -302,38 +302,23 @@ Stratified patients into risk categories:
 ## 📁 Repository Structure
 
 ```
-hospital-readmission-analytics/
+clinical-risk-stratification/
 │
-├── data/                          # Raw and processed datasets (gitignored)
-│   ├── diabetic_data.csv         # Original dataset (101,766 records)
-│   └── cleaned_data.csv          # Post-processing (96,437 records)
+├── data/                                # Dataset files
+│   ├── diabetic_data.csv                # Original dataset (101,766 records)
+│   ├── IDs_mapping.csv                  # Categorical ID mappings
+│   └── final_diabetes_analysis_VCI.csv  # Processed data with VCI scores
 │
-├── notebooks/                     # Jupyter notebooks
-│   ├── 01_data_cleaning.ipynb    # Phase 1: Preprocessing
-│   ├── 02_eda.ipynb              # Phase 2: Exploratory analysis
-│   ├── 03_web_scraping.ipynb     # Phase 3: ICD-9 enrichment
-│   └── 04_vci_model.ipynb        # Phase 4: Risk stratification
+├── notebooks/                             # Jupyter notebooks
+│   └── technical_appendix_modeling.ipynb  # Complete analysis pipeline
 │
-├── visualizations/                # Generated plots and charts
-│   ├── age_distribution.png
-│   ├── medication_risk.png
-│   ├── discharge_disposition.png
-│   ├── correlation_heatmap.png
-│   └── vci_validation.png
+├── graph/                            # Generated visualizations
+│   └── [All EDA and analysis plots]
 │
-├── reports/                       # Deliverables
-│   ├── strategic_insight_report.pdf
-│   └── technical_appendix.pdf
+├── reports/                          # Project deliverables
+│   └── strategic_insight_report.pdf
 │
-├── src/                           # Source code (if modularized)
-│   ├── scraper.py                # Web scraping functions
-│   ├── preprocessing.py          # Data cleaning utilities
-│   └── vci_calculator.py         # VCI scoring logic
-│
-├── requirements.txt               # Python dependencies
-├── README.md                      # This file
-└── LICENSE                        # MIT License
-
+└── README.md                         # This file
 ```
 
 ---
@@ -366,7 +351,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 3. **Install dependencies**
 
 ```bash
-pip install -r requirements.txt
+pip install pandas numpy matplotlib seaborn requests beautifulsoup4 jupyter
 ```
 
 4. **Launch Jupyter Notebook**
@@ -375,10 +360,10 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-5. **Run notebooks in order**
+5. **Open the analysis notebook**
 
-- Start with `01_data_cleaning.ipynb`
-- Progress through each phase sequentially
+- Navigate to `notebooks/technical_appendix_modeling.ipynb`
+- Run cells sequentially to reproduce the analysis
 
 ### Required Libraries
 
@@ -508,27 +493,36 @@ for code in target_codes:
 
 ---
 
+## 🎤 Presentation
+
+An interactive **30-minute presentation** was delivered to the VHN Executive Board covering:
+
+- Business context and HRRP financial implications
+- Data methodology and cleaning process
+- Key findings and operational failures
+- VCI model validation
+- Strategic recommendations
+
+**Format:** HTML slideshow (navigate with arrow keys)  
+**Location:** `reports/presentation_slides.html`  
+**Duration:** 30 minutes (5 presenters, 4 phases)
+
+**To view:** Open `presentation_slides.html` in any web browser
+
 ## 👥 Contributors
 
 **Project Team:**
 
-- Praveen Rusiru
-- Harsha Gallage
-- Ruwani Ranthika
-- Dinan Themika
-- Chanuth Dewhan
+- Praveen Rusiru [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://linkedin.com/in/praveen-rusiru) [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/PraveenRusiru)
+- Ruwani Ranthika [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://linkedin.com/in/ruwani-ranthika-ba4186314) [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/ruwani425)
+- Dinan Themika [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://linkedin.com/in/dinan-themika-651bab289) [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/alicechen)
+- Chanuth Dewhan [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://linkedin.com/in/chanuthdewhan) [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/chanuthdewhan)
 
 **Academic Context:**
 
 - GDSE 72
 - Institution: IJSE - Institute of Software Engineering
 - Lecturer: Mr. Dasun Athukorala
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
