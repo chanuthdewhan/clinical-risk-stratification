@@ -1,12 +1,12 @@
 # Strategic Patient Risk Stratification: Hospital Readmission Analytics
 
-> A data-driven approach to reducing 30-day diabetic patient readmissions and mitigating HRRP financial penalties at Virtual Health Network (VHN)  
+> A data-driven approach to reducing 30-day diabetic patient readmissions and mitigating HRRP financial penalties at Virtual Health Network (VHN)
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Complete-success.svg)]()
 
---- 
+---
 
 ## 📋 Table of Contents
 
@@ -19,10 +19,14 @@
 - [Installation & Usage](#installation--usage)
 - [Results & Validation](#results--validation)
 - [Recommendations](#recommendations)
+- [Presentation](#presentation)
+- [Interactive Dashboard](#interactive-dashboard)
 - [Contributors](#contributors)
 - [License](#license)
 
 ---
+
+<a id="executive-summary"></a>
 
 ## 🎯 Executive Summary
 
@@ -36,8 +40,11 @@ Hospital readmissions within 30 days trigger significant Medicare penalties unde
 - ✅ Built automated web scraping pipeline to enrich **top 20 ICD-9 diagnosis codes**
 - ✅ Provided **3 actionable recommendations** for immediate operational deployment
 - ✅ Delivered comprehensive 30-minute executive presentation
+- ✅ Deployed interactive Streamlit dashboard for real-time data exploration
 
 ---
+
+<a id="business-context"></a>
 
 ## 💼 Business Context
 
@@ -58,6 +65,8 @@ VHN's current discharge planning operates reactively:
 A data-driven risk stratification system that flags high-risk patients **before discharge**, enabling targeted interventions where they matter most.
 
 ---
+
+<a id="key-findings"></a>
 
 ## 🔍 Key Findings
 
@@ -93,6 +102,8 @@ A data-driven risk stratification system that flags high-risk patients **before 
 
 ---
 
+<a id="technology-stack"></a>
+
 ## 🛠️ Technology Stack
 
 ### Core Technologies
@@ -117,6 +128,8 @@ Python 3.8+
 - **Version Control:** Git
 
 ---
+
+<a id="project-methodology"></a>
 
 ## 📊 Project Methodology
 
@@ -239,6 +252,8 @@ Code 584  → Acute renal failure
 
 ---
 
+<a id="results--validation"></a>
+
 ## 📈 Results & Validation
 
 ### VCI Performance
@@ -256,6 +271,8 @@ Stratified patients into risk categories:
 **Transparency Advantage:** Nurses can see exactly why a patient was flagged (e.g., "Emergency admission + 15-day stay + 6 diagnoses + 4 prior ER visits"), building trust and clinical buy-in.
 
 ---
+
+<a id="recommendations"></a>
 
 ## 💡 Strategic Recommendations
 
@@ -299,6 +316,8 @@ Stratified patients into risk categories:
 
 ---
 
+<a id="repository-structure"></a>
+
 ## 📁 Repository Structure
 
 ```
@@ -314,15 +333,23 @@ clinical-risk-stratification/
 │
 ├── graph/                              # Generated visualizations
 │   └── [All EDA and analysis plots]
-│
+|
+├── docs/                               # Project Documentations
+│   └── Project_Specifications.pdf      # Full Project Specification
+|
 ├── reports/                            # Project deliverables
-│   ├── Strategic_Insight_Report.pdf    # Business Report
+│   ├── Strategic_Insight_Report.pdf    # Business Report (2,500+ words)
 │   └── VHN_Readmission_Presentation    # Executive Presentation
 │
+├── app.py                              # Streamlit dashboard
+├── requirements.txt                    # Python dependencies
 └── README.md                           # This file
+
 ```
 
 ---
+
+<a id="installation--usage"></a>
 
 ## 🚀 Installation & Usage
 
@@ -352,8 +379,13 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 3. **Install dependencies**
 
 ```bash
-pip install pandas numpy matplotlib seaborn requests beautifulsoup4 jupyter
+pip install -r requirements.txt
 ```
+
+**Additional libraries used (not in requirements.txt):**
+
+- requests (for web scraping)
+- beautifulsoup4 (for HTML parsing)
 
 4. **Launch Jupyter Notebook**
 
@@ -368,14 +400,20 @@ jupyter notebook
 
 ### Required Libraries
 
+See `requirements.txt`:
+
 ```txt
-pandas>=1.3.0
-numpy>=1.21.0
-matplotlib>=3.4.0
-seaborn>=0.11.0
-requests>=2.26.0
-beautifulsoup4>=4.9.0
-jupyter>=1.0.0
+pandas==2.3.3
+numpy==2.3.5
+matplotlib==3.10.8
+seaborn==0.13.2
+streamlit==1.55.0
+```
+
+**Additional libraries:**
+
+```bash
+pip install requests beautifulsoup4
 ```
 
 ---
@@ -494,6 +532,8 @@ for code in target_codes:
 
 ---
 
+<a id="presentation"></a>
+
 ## 🎤 Presentation
 
 An interactive **30-minute presentation** was delivered to the VHN Executive Board covering:
@@ -505,10 +545,43 @@ An interactive **30-minute presentation** was delivered to the VHN Executive Boa
 - Strategic recommendations
 
 **Format:** HTML slideshow (navigate with arrow keys)  
-**Location:** `reports/presentation_slides.html`  
-**Duration:** 30 minutes (5 presenters, 4 phases)
+**Location:** `reports/VHN_Readmission_Presentation.pdf`  
+**Duration:** 30 minutes (4 presenters, 5 phases)
 
-**To view:** Open `presentation_slides.html` in any web browser
+**To view:** [Download Presentation](reports/VHN_Readmission_Presentation.pdf)
+
+---
+
+<a id="interactive-dashboard"></a>
+
+## 🖥️ Interactive Dashboard
+
+Explore the findings through an **interactive Streamlit web application** featuring:
+
+- Real-time data visualizations
+- VCI risk calculator
+- Demographic and clinical insights
+- Strategic recommendations explorer
+
+**🔗 Live Demo:** [View Dashboard](https://clinical-risk-stratification-9bwccfpbzvesvjdq7yvmet.streamlit.app/)
+
+**To run locally:**
+
+```bash
+pip install streamlit
+streamlit run app.py
+```
+
+**Features:**
+
+- 📊 **Data Insights**: Interactive charts showing class imbalance, risk factors, and operational metrics
+- 🎯 **VCI Model**: Model validation results and risk stratification breakdown
+- 💡 **Recommendations**: Visual presentation of strategic interventions
+- 📁 **About**: Project overview and technical stack
+
+---
+
+<a id="contributors"></a>
 
 ## 👥 Contributors
 
